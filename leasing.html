@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for an apartment at Rich Management Company. Complete our online leasing application for apartments in Cleveland Heights and Shaker Heights.">
+    <title>Leasing Application | Rich Management Company</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Rich <span>Management</span></span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="properties.html" class="nav-link">Properties</a>
+                    <a href="available-units.html" class="nav-link">Available Units</a>
+                    <a href="leasing.html" class="nav-link active">Leasing</a>
+                    <a href="maintenance.html" class="nav-link">Maintenance</a>
+                    <a href="payment.html" class="nav-link">Pay Rent</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-mobile-link">Home</a>
+                <a href="properties.html" class="nav-mobile-link">Properties</a>
+                <a href="available-units.html" class="nav-mobile-link">Available Units</a>
+                <a href="leasing.html" class="nav-mobile-link active">Leasing</a>
+                <a href="maintenance.html" class="nav-mobile-link">Maintenance</a>
+                <a href="payment.html" class="nav-mobile-link">Pay Rent</a>
+                <a href="contact.html" class="nav-mobile-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Leasing Application</h1>
+            <p>Take the first step toward your new home. Apply online in minutes.</p>
+        </div>
+    </section>
+
+    <!-- Application Requirements Banner -->
+    <section style="padding: var(--space-6) 0;">
+        <div class="container">
+            <div class="alert alert-info">
+                <span class="alert-icon">📋</span>
+                <div class="alert-content">
+                    <div class="alert-title">What You'll Need</div>
+                    <div class="alert-description">
+                        Photo ID, proof of income (pay stubs or offer letter), and rental history. Application fee: <strong>$35</strong> (non-refundable).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Multi-Step Application Form -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="form-container">
+                <!-- Progress Indicator -->
+                <div class="form-progress" id="formProgress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="progress-step-number">1</div>
+                        <div class="progress-step-label">Property</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="progress-step-number">2</div>
+                        <div class="progress-step-label">Personal</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="progress-step-number">3</div>
+                        <div class="progress-step-label">Housing</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="progress-step-number">4</div>
+                        <div class="progress-step-label">Income</div>
+                    </div>
+                    <div class="progress-step" data-step="5">
+                        <div class="progress-step-number">5</div>
+                        <div class="progress-step-label">Documents</div>
+                    </div>
+                    <div class="progress-step" data-step="6">
+                        <div class="progress-step-number">6</div>
+                        <div class="progress-step-label">Review</div>
+                    </div>
+                </div>
+
+                <form id="leasingForm">
+                    <!-- Step 1: Property Selection -->
+                    <div class="form-step" id="step1">
+                        <div class="form-header">
+                            <h2>Which property interests you?</h2>
+                            <p>Select your desired property and move-in details.</p>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="form-group">
+                                <label class="form-label" for="property">Desired Property <span class="required">*</span></label>
+                                <select id="property" name="property" class="form-select" required>
+                                    <option value="">Select a property...</option>
+                                    <option value="2749-euclid" data-address="2749 Euclid Heights Blvd, Cleveland Heights">2749 Euclid Heights Blvd - Cleveland Heights</option>
+                                    <option value="2757-euclid" data-address="2757 Euclid Heights Blvd, Cleveland Heights">2757 Euclid Heights Blvd - Cleveland Heights</option>
+                                    <option value="2761-euclid" data-address="2761 Euclid Heights Blvd, Cleveland Heights">2761 Euclid Heights Blvd - Cleveland Heights</option>
+                                    <option value="2541-overlook" data-address="2541-45 Overlook Rd, Cleveland Heights">2541-45 Overlook Road - Cleveland Heights</option>
+                                    <option value="2572-lancashire" data-address="2572 Lancashire Rd, Cleveland Heights">2572 Lancashire Road - Cleveland Heights</option>
+                                    <option value="2808-mayfield" data-address="2808-2820 Mayfield Rd, Cleveland Heights">2808-2820 Mayfield Road - Cleveland Heights</option>
+                                    <option value="3730-warrensville" data-address="3730 Warrensville Center Rd, Shaker Heights">3730 Warrensville Center Rd - Shaker Heights</option>
+                                    <option value="10820-carnegie" data-address="10820-10822 Carnegie Ave, Cleveland">10820-10822 Carnegie Ave - Cleveland</option>
+                                    <option value="12509-cedar" data-address="12509 Cedar Rd, Cleveland Heights">12509 Cedar Road - Cleveland Heights</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="unitType">Unit Type <span class="required">*</span></label>
+                                    <select id="unitType" name="unitType" class="form-select" required>
+                                        <option value="">Select unit type...</option>
+                                        <option value="studio">Studio</option>
+                                        <option value="1br">1 Bedroom</option>
+                                        <option value="2br">2 Bedroom</option>
+                                        <option value="3br">3 Bedroom</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="leaseLength">Lease Length</label>
+                                    <select id="leaseLength" name="leaseLength" class="form-select">
+                                        <option value="12">12 Months (Standard)</option>
+                                        <option value="6">6 Months</option>
+                                        <option value="mtm">Month-to-Month</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="moveDate">Desired Move-In Date <span class="required">*</span></label>
+                                    <input type="date" id="moveDate" name="moveDate" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="occupants">Number of Occupants <span class="required">*</span></label>
+                                    <select id="occupants" name="occupants" class="form-select" required>
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 People</option>
+                                        <option value="3">3 People</option>
+                                        <option value="4">4 People</option>
+                                        <option value="5">5+ People</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Special Rates Notice -->
+                        <div class="info-box">
+                            <h4>🎓 Special Rates Available</h4>
+                            <p>Discounted rates for hospital employees and college students. Mention your eligibility in the additional notes section.</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <span></span>
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep1">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Personal Information -->
+                    <div class="form-step hidden" id="step2">
+                        <div class="form-header">
+                            <h2>Tell us about yourself</h2>
+                            <p>We need some basic information to process your application.</p>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">1</span>
+                                Basic Information
+                            </h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" class="form-input" required placeholder="you@example.com">
+                                    <p class="form-help">We'll send your application status updates here.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" required placeholder="(440) 555-1234">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="dob">Date of Birth <span class="required">*</span></label>
+                                    <input type="date" id="dob" name="dob" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="ssn">Social Security Number <span class="required">*</span></label>
+                                    <input type="text" id="ssn" name="ssn" class="form-input" required placeholder="XXX-XX-XXXX"
+                                           pattern="\d{3}-?\d{2}-?\d{4}" maxlength="11">
+                                    <p class="form-help">Required for credit and background check. Encrypted and secure.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">2</span>
+                                Identification
+                            </h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="idType">ID Type <span class="required">*</span></label>
+                                    <select id="idType" name="idType" class="form-select" required>
+                                        <option value="">Select ID type...</option>
+                                        <option value="drivers-license">Driver's License</option>
+                                        <option value="state-id">State ID</option>
+                                        <option value="passport">Passport</option>
+                                        <option value="military-id">Military ID</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="idNumber">ID Number</label>
+                                    <input type="text" id="idNumber" name="idNumber" class="form-input" placeholder="License or ID number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">3</span>
+                                Emergency Contact
+                            </h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="emergencyName">Contact Name <span class="required">*</span></label>
+                                    <input type="text" id="emergencyName" name="emergencyName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="emergencyRelation">Relationship <span class="required">*</span></label>
+                                    <select id="emergencyRelation" name="emergencyRelation" class="form-select" required>
+                                        <option value="">Select relationship...</option>
+                                        <option value="parent">Parent</option>
+                                        <option value="spouse">Spouse/Partner</option>
+                                        <option value="sibling">Sibling</option>
+                                        <option value="friend">Friend</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="emergencyPhone">Contact Phone <span class="required">*</span></label>
+                                <input type="tel" id="emergencyPhone" name="emergencyPhone" class="form-input" required placeholder="(440) 555-1234">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-ghost" id="backStep2">Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep2">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Housing History -->
+                    <div class="form-step hidden" id="step3">
+                        <div class="form-header">
+                            <h2>Your housing history</h2>
+                            <p>Tell us about your current and previous residence.</p>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">1</span>
+                                Current Address
+                            </h3>
+                            <div class="form-group">
+                                <label class="form-label" for="currentAddress">Street Address <span class="required">*</span></label>
+                                <input type="text" id="currentAddress" name="currentAddress" class="form-input" required placeholder="123 Main Street, Apt 4">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="currentCity">City <span class="required">*</span></label>
+                                    <input type="text" id="currentCity" name="currentCity" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="currentState">State <span class="required">*</span></label>
+                                    <select id="currentState" name="currentState" class="form-select" required>
+                                        <option value="">Select...</option>
+                                        <option value="OH" selected>Ohio</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="NY">New York</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="currentZip">ZIP Code <span class="required">*</span></label>
+                                    <input type="text" id="currentZip" name="currentZip" class="form-input" required maxlength="5" pattern="\d{5}">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="currentRent">Monthly Rent <span class="required">*</span></label>
+                                    <div class="input-prefix-group">
+                                        <span class="input-prefix">$</span>
+                                        <input type="number" id="currentRent" name="currentRent" class="form-input" required min="0" step="1">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="residenceLength">Time at This Address <span class="required">*</span></label>
+                                    <select id="residenceLength" name="residenceLength" class="form-select" required>
+                                        <option value="">Select...</option>
+                                        <option value="less-than-1">Less than 1 year</option>
+                                        <option value="1-2">1-2 years</option>
+                                        <option value="2-5">2-5 years</option>
+                                        <option value="5+">5+ years</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">2</span>
+                                Current Landlord (if renting)
+                            </h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="landlordName">Landlord/Manager Name</label>
+                                    <input type="text" id="landlordName" name="landlordName" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="landlordPhone">Landlord Phone</label>
+                                    <input type="tel" id="landlordPhone" name="landlordPhone" class="form-input" placeholder="(440) 555-1234">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="moveReason">Reason for Moving</label>
+                                <select id="moveReason" name="moveReason" class="form-select">
+                                    <option value="">Select a reason...</option>
+                                    <option value="relocating">Relocating for work</option>
+                                    <option value="closer-work">Moving closer to work</option>
+                                    <option value="more-space">Need more space</option>
+                                    <option value="less-space">Downsizing</option>
+                                    <option value="better-location">Better location/neighborhood</option>
+                                    <option value="cost">Lower rent</option>
+                                    <option value="first-time">First time renting</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">3</span>
+                                Background Questions
+                            </h3>
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="eviction" name="eviction">
+                                    <label for="eviction">I have been evicted or had an eviction filed against me in the past 7 years</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="brokenLease" name="brokenLease">
+                                    <label for="brokenLease">I have broken a lease agreement in the past 7 years</label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="evictionExplanation" style="display: none;">
+                                <label class="form-label" for="evictionDetails">Please explain the circumstances</label>
+                                <textarea id="evictionDetails" name="evictionDetails" class="form-textarea" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-ghost" id="backStep3">Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep3">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Employment & Income -->
+                    <div class="form-step hidden" id="step4">
+                        <div class="form-header">
+                            <h2>Employment & Income</h2>
+                            <p>We verify that applicants earn at least 2.5x the monthly rent.</p>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">1</span>
+                                Current Employment
+                            </h3>
+                            <div class="form-group">
+                                <label class="form-label" for="employmentStatus">Employment Status <span class="required">*</span></label>
+                                <select id="employmentStatus" name="employmentStatus" class="form-select" required>
+                                    <option value="">Select...</option>
+                                    <option value="employed-ft">Employed Full-Time</option>
+                                    <option value="employed-pt">Employed Part-Time</option>
+                                    <option value="self-employed">Self-Employed</option>
+                                    <option value="student">Student</option>
+                                    <option value="retired">Retired</option>
+                                    <option value="unemployed">Currently Unemployed</option>
+                                </select>
+                            </div>
+
+                            <div id="employmentDetails">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="employer">Employer Name <span class="required">*</span></label>
+                                        <input type="text" id="employer" name="employer" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="jobTitle">Job Title <span class="required">*</span></label>
+                                        <input type="text" id="jobTitle" name="jobTitle" class="form-input">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="employerAddress">Employer Address</label>
+                                    <input type="text" id="employerAddress" name="employerAddress" class="form-input" placeholder="123 Business Ave, Cleveland, OH 44113">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="employerPhone">Employer Phone</label>
+                                        <input type="tel" id="employerPhone" name="employerPhone" class="form-input" placeholder="(440) 555-1234">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="employmentLength">Time with Employer <span class="required">*</span></label>
+                                        <select id="employmentLength" name="employmentLength" class="form-select">
+                                            <option value="">Select...</option>
+                                            <option value="less-than-6mo">Less than 6 months</option>
+                                            <option value="6mo-1yr">6 months - 1 year</option>
+                                            <option value="1-2yr">1-2 years</option>
+                                            <option value="2-5yr">2-5 years</option>
+                                            <option value="5+yr">5+ years</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">2</span>
+                                Income Information
+                            </h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="monthlyIncome">Monthly Gross Income <span class="required">*</span></label>
+                                    <div class="input-prefix-group">
+                                        <span class="input-prefix">$</span>
+                                        <input type="number" id="monthlyIncome" name="monthlyIncome" class="form-input" required min="0" step="1">
+                                    </div>
+                                    <p class="form-help">Before taxes and deductions</p>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="otherIncome">Other Monthly Income</label>
+                                    <div class="input-prefix-group">
+                                        <span class="input-prefix">$</span>
+                                        <input type="number" id="otherIncome" name="otherIncome" class="form-input" min="0" step="1" value="0">
+                                    </div>
+                                    <p class="form-help">Alimony, child support, investments, etc.</p>
+                                </div>
+                            </div>
+
+                            <!-- Income Verification Indicator -->
+                            <div class="income-indicator" id="incomeIndicator" style="display: none;">
+                                <div class="income-status" id="incomeStatus"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">3</span>
+                                Additional Income Sources
+                            </h3>
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="hasCoSigner" name="hasCoSigner">
+                                    <label for="hasCoSigner">I will have a co-signer or guarantor</label>
+                                </div>
+                            </div>
+                            <div id="coSignerSection" style="display: none;">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="form-label" for="coSignerName">Co-Signer Name</label>
+                                        <input type="text" id="coSignerName" name="coSignerName" class="form-input">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="coSignerPhone">Co-Signer Phone</label>
+                                        <input type="tel" id="coSignerPhone" name="coSignerPhone" class="form-input">
+                                    </div>
+                                </div>
+                                <p class="form-help">Co-signers must complete a separate application.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-ghost" id="backStep4">Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep4">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Document Upload -->
+                    <div class="form-step hidden" id="step5">
+                        <div class="form-header">
+                            <h2>Upload Your Documents</h2>
+                            <p>Upload required documents to speed up your application review.</p>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">1</span>
+                                Photo ID <span class="required">*</span>
+                            </h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Upload a clear photo of your driver's license, state ID, or passport.</p>
+                            <div class="file-upload" id="idUpload" data-type="id">
+                                <input type="file" id="idFile" name="idFile" accept="image/*,.pdf">
+                                <div class="file-upload-icon">🪪</div>
+                                <div class="file-upload-text">Drop your ID here or click to upload</div>
+                                <div class="file-upload-hint">PNG, JPG, or PDF up to 5MB</div>
+                            </div>
+                            <div class="uploaded-files" id="idFilesList"></div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">2</span>
+                                Proof of Income <span class="required">*</span>
+                            </h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Upload recent pay stubs (last 2-3), offer letter, or bank statements.</p>
+                            <div class="file-upload" id="incomeUpload" data-type="income">
+                                <input type="file" id="incomeFiles" name="incomeFiles" accept="image/*,.pdf" multiple>
+                                <div class="file-upload-icon">📄</div>
+                                <div class="file-upload-text">Drop files here or click to upload</div>
+                                <div class="file-upload-hint">PNG, JPG, or PDF up to 5MB each (max 5 files)</div>
+                            </div>
+                            <div class="uploaded-files" id="incomeFilesList"></div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">3</span>
+                                Additional Documents (Optional)
+                            </h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Reference letters, proof of student status, etc.</p>
+                            <div class="file-upload" id="otherUpload" data-type="other">
+                                <input type="file" id="otherFiles" name="otherFiles" accept="image/*,.pdf" multiple>
+                                <div class="file-upload-icon">📎</div>
+                                <div class="file-upload-text">Drop files here or click to upload</div>
+                                <div class="file-upload-hint">PNG, JPG, or PDF up to 5MB each (max 5 files)</div>
+                            </div>
+                            <div class="uploaded-files" id="otherFilesList"></div>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <span class="alert-icon">🔒</span>
+                            <div class="alert-content">
+                                <div class="alert-title">Your Documents Are Secure</div>
+                                <div class="alert-description">
+                                    All uploaded documents are encrypted and only accessible by our leasing team for application review.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-ghost" id="backStep5">Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep5">Review Application</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Review & Submit -->
+                    <div class="form-step hidden" id="step6">
+                        <div class="form-header">
+                            <h2>Review Your Application</h2>
+                            <p>Please verify all information before submitting.</p>
+                        </div>
+
+                        <div class="review-card" id="applicationReview">
+                            <!-- Populated by JavaScript -->
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">Authorization & Consent</h3>
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="creditCheck" name="creditCheck" required>
+                                    <label for="creditCheck"><span class="required">*</span> I authorize Rich Management Company to obtain a consumer credit report, criminal background check, and verify all information in this application.</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="truthful" name="truthful" required>
+                                    <label for="truthful"><span class="required">*</span> I certify that all information provided is true and complete. I understand that false information may result in denial or lease termination.</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="appFee" name="appFee" required>
+                                    <label for="appFee"><span class="required">*</span> I understand that a non-refundable application fee of $35 is required and will be collected.</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-box">
+                            <h4>📧 What Happens Next?</h4>
+                            <p>After submitting, you'll receive a confirmation email with your application number. We typically review applications within 2-3 business days and will contact you with our decision.</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-ghost" id="backStep6">Edit Application</button>
+                            <button type="submit" class="btn btn-primary btn-lg" id="submitApplication">
+                                Submit Application
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Success State -->
+                    <div class="form-step hidden" id="stepSuccess">
+                        <div class="success-message">
+                            <div class="success-icon">🎉</div>
+                            <h2>Application Submitted!</h2>
+                            <p class="success-tracking">Your application number: <strong id="applicationNumber">APP-2024-XXXX</strong></p>
+                            <p>We've sent a confirmation to your email. Our team will review your application and contact you within 2-3 business days.</p>
+
+                            <div class="next-steps-card">
+                                <h4>What to Expect</h4>
+                                <ul class="timeline">
+                                    <li class="timeline-item">
+                                        <span class="timeline-icon">📧</span>
+                                        <div>
+                                            <strong>Confirmation Email</strong>
+                                            <p>Check your inbox for application details</p>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-item">
+                                        <span class="timeline-icon">🔍</span>
+                                        <div>
+                                            <strong>Application Review</strong>
+                                            <p>We verify your information (2-3 business days)</p>
+                                        </div>
+                                    </li>
+                                    <li class="timeline-item">
+                                        <span class="timeline-icon">📞</span>
+                                        <div>
+                                            <strong>Decision & Next Steps</strong>
+                                            <p>We'll call to discuss approval and scheduling</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="success-actions">
+                                <a href="index.html" class="btn btn-primary">Return Home</a>
+                                <a href="available-units.html" class="btn btn-outline">View More Units</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Application FAQ</h2>
+                <p>Common questions about our leasing process.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" style="text-align: left;">
+                    <h3>How long does approval take?</h3>
+                    <p>Most applications are processed within 2-3 business days. Incomplete applications may take longer.</p>
+                </div>
+                <div class="feature-card" style="text-align: left;">
+                    <h3>What credit score is needed?</h3>
+                    <p>We consider the full picture, not just credit scores. Steady income and good rental history matter most.</p>
+                </div>
+                <div class="feature-card" style="text-align: left;">
+                    <h3>Is the application fee refundable?</h3>
+                    <p>No, the $35 fee covers screening costs and is non-refundable regardless of the outcome.</p>
+                </div>
+                <div class="feature-card" style="text-align: left;">
+                    <h3>Can I apply with a co-signer?</h3>
+                    <p>Yes! Co-signers must complete their own application. This can help if you have limited credit history.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Questions Before You Apply?</h2>
+            <p>Contact us to learn more about our properties and application process.</p>
+            <div class="cta-actions">
+                <a href="tel:4406007027" class="btn btn-white btn-lg">Call (440) 600-7027</a>
+                <a href="contact.html" class="btn btn-outline-white btn-lg">Send Message</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Rich <span>Management</span></h3>
+                    <p>Quality apartments in Cleveland Heights and Shaker Heights. Serving the Coventry, Overlook, and Cedar/Fairmount neighborhoods.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="Google">G</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="available-units.html">Available Units</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Residents</h4>
+                    <ul>
+                        <li><a href="payment.html">Pay Rent</a></li>
+                        <li><a href="maintenance.html">Maintenance</a></li>
+                        <li><a href="leasing.html">Leasing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>950 Main Avenue</li>
+                        <li>Fourth Floor</li>
+                        <li>Cleveland, OH 44113</li>
+                        <li><a href="tel:4406007027">(440) 600-7027</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rich Management Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/leasing.js"></script>
+
+    <style>
+    /* Input Prefix Group */
+    .input-prefix-group {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-prefix {
+        position: absolute;
+        left: var(--space-4);
+        color: var(--text-muted);
+        font-weight: 500;
+        pointer-events: none;
+    }
+
+    .input-prefix-group .form-input {
+        padding-left: var(--space-8);
+    }
+
+    /* Income Indicator */
+    .income-indicator {
+        margin-top: var(--space-4);
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+        background: var(--bg-secondary);
+    }
+
+    .income-status {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+    }
+
+    .income-status.success {
+        color: var(--success-600);
+    }
+
+    .income-status.warning {
+        color: var(--warning-600);
+    }
+
+    .income-status.error {
+        color: var(--error-600);
+    }
+
+    /* Timeline */
+    .next-steps-card {
+        background: var(--bg-secondary);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+        margin: var(--space-8) 0;
+        text-align: left;
+    }
+
+    .next-steps-card h4 {
+        color: var(--secondary-700);
+        margin-bottom: var(--space-4);
+    }
+
+    .timeline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .timeline-item {
+        display: flex;
+        gap: var(--space-4);
+        padding: var(--space-4) 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-icon {
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+
+    .timeline-item strong {
+        display: block;
+        color: var(--text-primary);
+        margin-bottom: var(--space-1);
+    }
+
+    .timeline-item p {
+        color: var(--text-secondary);
+        font-size: var(--text-sm);
+        margin: 0;
+    }
+
+    /* Hidden utility */
+    .hidden {
+        display: none !important;
+    }
+    </style>
+</body>
+</html>

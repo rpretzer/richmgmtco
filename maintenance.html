@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit a maintenance request to Rich Management Company. 24/7 emergency maintenance support for all residents.">
+    <title>Maintenance Request | Rich Management Company</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Rich <span>Management</span></span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="properties.html" class="nav-link">Properties</a>
+                    <a href="available-units.html" class="nav-link">Available Units</a>
+                    <a href="leasing.html" class="nav-link">Leasing</a>
+                    <a href="maintenance.html" class="nav-link active">Maintenance</a>
+                    <a href="payment.html" class="nav-link">Pay Rent</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-mobile-link">Home</a>
+                <a href="properties.html" class="nav-mobile-link">Properties</a>
+                <a href="available-units.html" class="nav-mobile-link">Available Units</a>
+                <a href="leasing.html" class="nav-mobile-link">Leasing</a>
+                <a href="maintenance.html" class="nav-mobile-link active">Maintenance</a>
+                <a href="payment.html" class="nav-mobile-link">Pay Rent</a>
+                <a href="contact.html" class="nav-mobile-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Maintenance Request</h1>
+            <p>Submit a request and track its status. We respond to all requests within 24 hours.</p>
+        </div>
+    </section>
+
+    <!-- Emergency Banner -->
+    <section style="padding: var(--space-6) 0;">
+        <div class="container">
+            <div class="alert alert-warning">
+                <span class="alert-icon">⚠️</span>
+                <div class="alert-content">
+                    <div class="alert-title">Emergency Maintenance</div>
+                    <div class="alert-description">
+                        For urgent issues (flooding, gas leaks, no heat, security) call our 24/7 line: <strong><a href="tel:4406007027" style="color: inherit;">(440) 600-7027</a></strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Request Type Selection -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="form-container">
+                <!-- Progress Indicator -->
+                <div class="form-progress" id="formProgress">
+                    <div class="progress-step active" data-step="1">
+                        <div class="progress-step-number">1</div>
+                        <div class="progress-step-label">Issue Type</div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="progress-step-number">2</div>
+                        <div class="progress-step-label">Details</div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="progress-step-number">3</div>
+                        <div class="progress-step-label">Contact</div>
+                    </div>
+                    <div class="progress-step" data-step="4">
+                        <div class="progress-step-number">4</div>
+                        <div class="progress-step-label">Confirm</div>
+                    </div>
+                </div>
+
+                <form id="maintenanceForm">
+                    <!-- Step 1: Issue Category -->
+                    <div class="form-step" id="step1">
+                        <div class="form-header">
+                            <h2>What type of issue are you experiencing?</h2>
+                            <p>Select the category that best describes your maintenance need.</p>
+                        </div>
+
+                        <div class="category-grid" id="categoryGrid">
+                            <label class="category-card" data-category="plumbing" data-vendor="plumber">
+                                <input type="radio" name="category" value="plumbing" required>
+                                <div class="category-icon">🚿</div>
+                                <div class="category-name">Plumbing</div>
+                                <div class="category-examples">Leaks, clogs, toilet, faucet, water heater</div>
+                            </label>
+
+                            <label class="category-card" data-category="electrical" data-vendor="electrician">
+                                <input type="radio" name="category" value="electrical">
+                                <div class="category-icon">💡</div>
+                                <div class="category-name">Electrical</div>
+                                <div class="category-examples">Outlets, lights, breakers, switches</div>
+                            </label>
+
+                            <label class="category-card" data-category="hvac" data-vendor="hvac">
+                                <input type="radio" name="category" value="hvac">
+                                <div class="category-icon">🌡️</div>
+                                <div class="category-name">Heating / Cooling</div>
+                                <div class="category-examples">No heat, AC not working, thermostat</div>
+                            </label>
+
+                            <label class="category-card" data-category="appliances" data-vendor="appliance">
+                                <input type="radio" name="category" value="appliances">
+                                <div class="category-icon">🍳</div>
+                                <div class="category-name">Appliances</div>
+                                <div class="category-examples">Stove, refrigerator, dishwasher, disposal</div>
+                            </label>
+
+                            <label class="category-card" data-category="locks" data-vendor="locksmith">
+                                <input type="radio" name="category" value="locks">
+                                <div class="category-icon">🔐</div>
+                                <div class="category-name">Locks & Security</div>
+                                <div class="category-examples">Door locks, keys, window locks, entry</div>
+                            </label>
+
+                            <label class="category-card" data-category="structural" data-vendor="general">
+                                <input type="radio" name="category" value="structural">
+                                <div class="category-icon">🚪</div>
+                                <div class="category-name">Doors & Windows</div>
+                                <div class="category-examples">Won't close, broken glass, screens, drafts</div>
+                            </label>
+
+                            <label class="category-card" data-category="pests" data-vendor="pest">
+                                <input type="radio" name="category" value="pests">
+                                <div class="category-icon">🐜</div>
+                                <div class="category-name">Pest Control</div>
+                                <div class="category-examples">Insects, rodents, wildlife</div>
+                            </label>
+
+                            <label class="category-card" data-category="water-damage" data-vendor="emergency">
+                                <input type="radio" name="category" value="water-damage">
+                                <div class="category-icon">💧</div>
+                                <div class="category-name">Water Damage</div>
+                                <div class="category-examples">Leaks from ceiling, flooding, moisture</div>
+                            </label>
+
+                            <label class="category-card" data-category="other" data-vendor="general">
+                                <input type="radio" name="category" value="other">
+                                <div class="category-icon">🔧</div>
+                                <div class="category-name">Other</div>
+                                <div class="category-examples">Anything not listed above</div>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep1" disabled>
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Issue Details -->
+                    <div class="form-step hidden" id="step2">
+                        <div class="form-header">
+                            <h2>Tell us more about the issue</h2>
+                            <p>The more details you provide, the faster we can resolve it.</p>
+                        </div>
+
+                        <!-- Priority Detection Alert (hidden by default) -->
+                        <div class="alert alert-error hidden" id="emergencyAlert">
+                            <span class="alert-icon">🚨</span>
+                            <div class="alert-content">
+                                <div class="alert-title">This sounds like an emergency</div>
+                                <div class="alert-description">
+                                    Please call our emergency line immediately: <strong>(440) 600-7027</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">1</span>
+                                Priority Level
+                            </h3>
+                            <div class="priority-grid" id="priorityGrid">
+                                <label class="priority-card" data-priority="emergency">
+                                    <input type="radio" name="priority" value="emergency">
+                                    <div class="priority-badge emergency">Emergency</div>
+                                    <div class="priority-description">Health/safety risk, needs immediate attention</div>
+                                    <div class="priority-examples">No heat in winter, flooding, gas smell, no power</div>
+                                </label>
+
+                                <label class="priority-card" data-priority="urgent">
+                                    <input type="radio" name="priority" value="urgent">
+                                    <div class="priority-badge urgent">Urgent</div>
+                                    <div class="priority-description">Affects daily living, needs attention today</div>
+                                    <div class="priority-examples">Toilet not working, no hot water, broken lock</div>
+                                </label>
+
+                                <label class="priority-card" data-priority="normal">
+                                    <input type="radio" name="priority" value="normal" checked>
+                                    <div class="priority-badge normal">Normal</div>
+                                    <div class="priority-description">Can wait a few days</div>
+                                    <div class="priority-examples">Dripping faucet, light out, minor repair</div>
+                                </label>
+
+                                <label class="priority-card" data-priority="low">
+                                    <input type="radio" name="priority" value="low">
+                                    <div class="priority-badge low">Low</div>
+                                    <div class="priority-description">Convenience issue, no rush</div>
+                                    <div class="priority-examples">Cosmetic issues, suggestions, minor inconvenience</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">2</span>
+                                Describe the Issue
+                            </h3>
+                            <div class="form-group">
+                                <label class="form-label" for="issueTitle">Brief Title <span class="required">*</span></label>
+                                <input type="text" id="issueTitle" name="issueTitle" class="form-input" required
+                                       placeholder="e.g., Kitchen faucet leaking" maxlength="100">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="issueDescription">Detailed Description <span class="required">*</span></label>
+                                <textarea id="issueDescription" name="issueDescription" class="form-textarea" required
+                                          placeholder="Please describe the issue in detail. Include:&#10;• Where in your unit is the problem?&#10;• When did it start?&#10;• Have you tried anything to fix it?"></textarea>
+                                <p class="form-help">Include location, when it started, and any steps you've already tried.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">3</span>
+                                Upload Photos (Recommended)
+                            </h3>
+                            <p style="color: var(--text-secondary); margin-bottom: var(--space-4);">Photos help us diagnose the issue faster and send the right technician.</p>
+
+                            <div class="file-upload" id="fileUpload">
+                                <input type="file" id="photos" name="photos" multiple accept="image/*,video/*">
+                                <div class="file-upload-icon">📷</div>
+                                <div class="file-upload-text">Drag photos here or click to upload</div>
+                                <div class="file-upload-hint">PNG, JPG, or MP4 up to 10MB each (max 5 files)</div>
+                            </div>
+                            <div class="uploaded-files" id="uploadedFiles"></div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-ghost" id="backStep2">Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep2">Continue</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Contact & Access -->
+                    <div class="form-step hidden" id="step3">
+                        <div class="form-header">
+                            <h2>Contact & Access Information</h2>
+                            <p>How can we reach you and access your unit?</p>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">1</span>
+                                Your Information
+                            </h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="tenantName">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="tenantName" name="tenantName" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="tenantPhone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="tenantPhone" name="tenantPhone" class="form-input" required
+                                           placeholder="(440) 555-1234">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="tenantEmail">Email Address <span class="required">*</span></label>
+                                <input type="email" id="tenantEmail" name="tenantEmail" class="form-input" required
+                                       placeholder="you@example.com">
+                                <p class="form-help">We'll send status updates to this email.</p>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">2</span>
+                                Property Information
+                            </h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="property">Property Address <span class="required">*</span></label>
+                                    <select id="property" name="property" class="form-select" required>
+                                        <option value="">Select your property...</option>
+                                        <option value="2749-euclid">2749 Euclid Heights Blvd</option>
+                                        <option value="2757-euclid">2757 Euclid Heights Blvd</option>
+                                        <option value="2761-euclid">2761 Euclid Heights Blvd</option>
+                                        <option value="2541-overlook">2541-45 Overlook Road</option>
+                                        <option value="2572-lancashire">2572 Lancashire Road</option>
+                                        <option value="2808-mayfield">2808-2820 Mayfield Road</option>
+                                        <option value="3730-warrensville">3730 Warrensville Center Rd</option>
+                                        <option value="10820-carnegie">10820-10822 Carnegie Ave</option>
+                                        <option value="12509-cedar">12509 Cedar Road</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="unit">Unit Number <span class="required">*</span></label>
+                                    <input type="text" id="unit" name="unit" class="form-input" required
+                                           placeholder="e.g., Apt 4, Unit B">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3 class="form-section-title">
+                                <span class="step-number">3</span>
+                                Access & Scheduling
+                            </h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="availability">Best Time to Contact</label>
+                                    <select id="availability" name="availability" class="form-select">
+                                        <option value="anytime">Anytime</option>
+                                        <option value="morning">Morning (8am - 12pm)</option>
+                                        <option value="afternoon">Afternoon (12pm - 5pm)</option>
+                                        <option value="evening">Evening (5pm - 8pm)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="entryPermission">Entry Permission</label>
+                                    <select id="entryPermission" name="entryPermission" class="form-select">
+                                        <option value="present">I need to be present</option>
+                                        <option value="permission">OK to enter if I'm not home</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="hasPets" name="hasPets">
+                                    <label for="hasPets">I have pets in the unit (please note any special instructions below)</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="accessNotes">Additional Access Notes</label>
+                                <textarea id="accessNotes" name="accessNotes" class="form-textarea" rows="3"
+                                          placeholder="Any special instructions for accessing your unit, pet information, alarm codes, etc."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-ghost" id="backStep3">Back</button>
+                            <button type="button" class="btn btn-primary btn-lg" id="nextStep3">Review Request</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Review & Submit -->
+                    <div class="form-step hidden" id="step4">
+                        <div class="form-header">
+                            <h2>Review Your Request</h2>
+                            <p>Please verify all information is correct before submitting.</p>
+                        </div>
+
+                        <div class="review-card" id="reviewCard">
+                            <!-- Populated by JavaScript -->
+                        </div>
+
+                        <div class="info-box">
+                            <h4>📧 What happens next?</h4>
+                            <p>You'll receive a confirmation email with a tracking number. We'll contact you within 24 hours (or sooner for urgent issues) to schedule the repair.</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-ghost" id="backStep4">Edit Request</button>
+                            <button type="submit" class="btn btn-primary btn-lg" id="submitRequest">
+                                Submit Request
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Success State -->
+                    <div class="form-step hidden" id="stepSuccess">
+                        <div class="success-message">
+                            <div class="success-icon">✅</div>
+                            <h2>Request Submitted Successfully!</h2>
+                            <p class="success-tracking">Your tracking number: <strong id="trackingNumber">MR-2024-XXXX</strong></p>
+                            <p>We've sent a confirmation to your email. Our team will contact you within 24 hours.</p>
+
+                            <div class="success-actions">
+                                <a href="index.html" class="btn btn-primary">Return Home</a>
+                                <button type="button" class="btn btn-outline" id="submitAnother">Submit Another Request</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Self-Help Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Fixes You Can Try</h2>
+                <p>Some common issues you may be able to resolve yourself.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" style="text-align: left;">
+                    <div class="feature-icon">💡</div>
+                    <h3>No Power?</h3>
+                    <p>Check if neighbors have power. If just your unit, check the breaker panel for tripped breakers. Flip off then on.</p>
+                </div>
+                <div class="feature-card" style="text-align: left;">
+                    <div class="feature-icon">🚿</div>
+                    <h3>Clogged Drain?</h3>
+                    <p>Try a plunger first. Avoid chemical drain cleaners as they can damage pipes. Still clogged? Submit a request.</p>
+                </div>
+                <div class="feature-card" style="text-align: left;">
+                    <div class="feature-icon">🌡️</div>
+                    <h3>No Heat?</h3>
+                    <p>Check thermostat is set to "heat" mode and temperature is correct. Check air filter. Still no heat? Call emergency line.</p>
+                </div>
+                <div class="feature-card" style="text-align: left;">
+                    <div class="feature-icon">🔑</div>
+                    <h3>Locked Out?</h3>
+                    <p>During business hours, call the office. After hours, you may need a locksmith. Consider giving a spare to a neighbor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Immediate Help?</h2>
+            <p>For emergencies, call our 24/7 maintenance line.</p>
+            <div class="cta-actions">
+                <a href="tel:4406007027" class="btn btn-white btn-lg">📞 Call (440) 600-7027</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Rich <span>Management</span></h3>
+                    <p>Quality apartments in Cleveland Heights and Shaker Heights. Serving the Coventry, Overlook, and Cedar/Fairmount neighborhoods.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="Google">G</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="available-units.html">Available Units</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Residents</h4>
+                    <ul>
+                        <li><a href="payment.html">Pay Rent</a></li>
+                        <li><a href="maintenance.html">Maintenance</a></li>
+                        <li><a href="leasing.html">Leasing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>950 Main Avenue</li>
+                        <li>Fourth Floor</li>
+                        <li>Cleveland, OH 44113</li>
+                        <li><a href="tel:4406007027">(440) 600-7027</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rich Management Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/maintenance.js"></script>
+
+    <style>
+    /* Category Selection Grid */
+    .category-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: var(--space-4);
+        margin-bottom: var(--space-8);
+    }
+
+    .category-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: var(--space-5);
+        background: var(--bg-primary);
+        border: 2px solid var(--border-light);
+        border-radius: var(--radius-xl);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        text-align: center;
+    }
+
+    .category-card:hover {
+        border-color: var(--primary-300);
+        background: var(--primary-50);
+    }
+
+    .category-card input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .category-card:has(input:checked) {
+        border-color: var(--primary-500);
+        background: var(--primary-50);
+        box-shadow: 0 0 0 3px var(--primary-100);
+    }
+
+    .category-icon {
+        font-size: 36px;
+        margin-bottom: var(--space-3);
+    }
+
+    .category-name {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--space-2);
+    }
+
+    .category-examples {
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        line-height: 1.4;
+    }
+
+    /* Priority Selection */
+    .priority-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: var(--space-4);
+    }
+
+    .priority-card {
+        padding: var(--space-4);
+        background: var(--bg-primary);
+        border: 2px solid var(--border-light);
+        border-radius: var(--radius-lg);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .priority-card:hover {
+        border-color: var(--secondary-300);
+    }
+
+    .priority-card input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    .priority-card:has(input:checked) {
+        border-color: var(--primary-500);
+        background: var(--primary-50);
+    }
+
+    .priority-badge {
+        display: inline-block;
+        padding: var(--space-1) var(--space-3);
+        border-radius: var(--radius-full);
+        font-size: var(--text-xs);
+        font-weight: 600;
+        margin-bottom: var(--space-2);
+    }
+
+    .priority-badge.emergency { background: var(--error-500); color: white; }
+    .priority-badge.urgent { background: var(--warning-500); color: white; }
+    .priority-badge.normal { background: var(--info-500); color: white; }
+    .priority-badge.low { background: var(--secondary-400); color: white; }
+
+    .priority-description {
+        font-size: var(--text-sm);
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: var(--space-1);
+    }
+
+    .priority-examples {
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+    }
+
+    /* Form Actions */
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+        padding-top: var(--space-6);
+        border-top: 1px solid var(--border-light);
+    }
+
+    .form-actions .btn-primary {
+        margin-left: auto;
+    }
+
+    /* Uploaded Files */
+    .uploaded-files {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        margin-top: var(--space-4);
+    }
+
+    .uploaded-file {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-2) var(--space-3);
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+        font-size: var(--text-sm);
+    }
+
+    .uploaded-file .remove-file {
+        cursor: pointer;
+        color: var(--error-500);
+        font-weight: bold;
+    }
+
+    /* Review Card */
+    .review-card {
+        background: var(--bg-secondary);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+        margin-bottom: var(--space-6);
+    }
+
+    .review-section {
+        margin-bottom: var(--space-5);
+        padding-bottom: var(--space-5);
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .review-section:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .review-section h4 {
+        font-size: var(--text-sm);
+        color: var(--text-muted);
+        margin-bottom: var(--space-2);
+    }
+
+    .review-section p {
+        font-size: var(--text-base);
+        color: var(--text-primary);
+    }
+
+    .review-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    /* Success Message */
+    .success-message {
+        text-align: center;
+        padding: var(--space-8) 0;
+    }
+
+    .success-icon {
+        font-size: 64px;
+        margin-bottom: var(--space-6);
+    }
+
+    .success-message h2 {
+        color: var(--success-600);
+        margin-bottom: var(--space-4);
+    }
+
+    .success-tracking {
+        font-size: var(--text-lg);
+        background: var(--bg-secondary);
+        padding: var(--space-3) var(--space-5);
+        border-radius: var(--radius-lg);
+        display: inline-block;
+        margin-bottom: var(--space-4);
+    }
+
+    .success-actions {
+        display: flex;
+        justify-content: center;
+        gap: var(--space-4);
+        margin-top: var(--space-8);
+    }
+
+    /* Hidden utility */
+    .hidden {
+        display: none !important;
+    }
+    </style>
+</body>
+</html>

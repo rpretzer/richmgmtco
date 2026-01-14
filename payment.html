@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pay your rent online at Rich Management Company. Secure, convenient online payment portal for residents.">
+    <title>Payment Portal | Rich Management Company</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Rich <span>Management</span></span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="properties.html" class="nav-link">Properties</a>
+                    <a href="available-units.html" class="nav-link">Available Units</a>
+                    <a href="leasing.html" class="nav-link">Leasing</a>
+                    <a href="maintenance.html" class="nav-link">Maintenance</a>
+                    <a href="payment.html" class="nav-link active">Pay Rent</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-mobile-link">Home</a>
+                <a href="properties.html" class="nav-mobile-link">Properties</a>
+                <a href="available-units.html" class="nav-mobile-link">Available Units</a>
+                <a href="leasing.html" class="nav-mobile-link">Leasing</a>
+                <a href="maintenance.html" class="nav-mobile-link">Maintenance</a>
+                <a href="payment.html" class="nav-mobile-link active">Pay Rent</a>
+                <a href="contact.html" class="nav-mobile-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Payment Portal</h1>
+            <p>Pay your rent quickly and securely online.</p>
+        </div>
+    </section>
+
+    <!-- Due Date Banner -->
+    <section style="padding: var(--space-6) 0;">
+        <div class="container">
+            <div class="alert alert-info">
+                <span class="alert-icon">📅</span>
+                <div class="alert-content">
+                    <div class="alert-title">Rent Due Date</div>
+                    <div class="alert-description">
+                        Rent is due on the <strong>1st of each month</strong>. Late fee of $50 applies after the 5th.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Options Section -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Payment Method</h2>
+                <p>Select your preferred way to pay rent.</p>
+            </div>
+
+            <div class="payment-options-grid">
+                <!-- Online Payment Card -->
+                <div class="payment-card payment-card-featured">
+                    <div class="payment-card-badge">Recommended</div>
+                    <div class="payment-card-icon">💳</div>
+                    <h3>Pay Online</h3>
+                    <p>Use our secure payment portal to pay with credit card, debit card, or bank transfer.</p>
+
+                    <div class="payment-features">
+                        <div class="payment-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Available 24/7</span>
+                        </div>
+                        <div class="payment-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Instant confirmation</span>
+                        </div>
+                        <div class="payment-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Email receipts</span>
+                        </div>
+                        <div class="payment-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Bank transfer (ACH) - Free</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg" id="payOnlineBtn" style="width: 100%;">
+                        Pay Now
+                    </button>
+                    <p class="payment-card-note">Credit/debit: 2.9% fee | ACH: Free</p>
+                </div>
+
+                <!-- Auto-Pay Card -->
+                <div class="payment-card">
+                    <div class="payment-card-icon">🔄</div>
+                    <h3>Set Up Auto-Pay</h3>
+                    <p>Never miss a payment. Automatically pay on the 1st of each month.</p>
+
+                    <div class="payment-features">
+                        <div class="payment-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Set it and forget it</span>
+                        </div>
+                        <div class="payment-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Cancel anytime</span>
+                        </div>
+                        <div class="payment-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Email reminders before charge</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-outline btn-lg" id="autoPayBtn" style="width: 100%;">
+                        Set Up Auto-Pay
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Form Modal -->
+    <div class="modal-overlay" id="paymentModal">
+        <div class="modal">
+            <button class="modal-close" id="closePaymentModal">&times;</button>
+
+            <div class="modal-header">
+                <h2>Make a Payment</h2>
+                <p>Enter your details to pay rent securely.</p>
+            </div>
+
+            <form id="paymentForm">
+                <!-- Step 1: Verify Identity -->
+                <div class="payment-step" id="paymentStep1">
+                    <div class="form-section">
+                        <h3 class="form-section-title">
+                            <span class="step-number">1</span>
+                            Verify Your Account
+                        </h3>
+                        <div class="form-group">
+                            <label class="form-label" for="paymentProperty">Property Address <span class="required">*</span></label>
+                            <select id="paymentProperty" name="property" class="form-select" required>
+                                <option value="">Select your property...</option>
+                                <option value="2749-euclid">2749 Euclid Heights Blvd</option>
+                                <option value="2757-euclid">2757 Euclid Heights Blvd</option>
+                                <option value="2761-euclid">2761 Euclid Heights Blvd</option>
+                                <option value="2541-overlook">2541-45 Overlook Road</option>
+                                <option value="2572-lancashire">2572 Lancashire Road</option>
+                                <option value="2808-mayfield">2808-2820 Mayfield Road</option>
+                                <option value="3730-warrensville">3730 Warrensville Center Rd</option>
+                                <option value="10820-carnegie">10820-10822 Carnegie Ave</option>
+                                <option value="12509-cedar">12509 Cedar Road</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="paymentUnit">Unit Number <span class="required">*</span></label>
+                                <input type="text" id="paymentUnit" name="unit" class="form-input" required placeholder="e.g., Apt 4">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="paymentEmail">Email Address <span class="required">*</span></label>
+                                <input type="email" id="paymentEmail" name="email" class="form-input" required placeholder="you@example.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">
+                            <span class="step-number">2</span>
+                            Payment Amount
+                        </h3>
+                        <div class="form-group">
+                            <label class="form-label" for="paymentAmount">Amount to Pay <span class="required">*</span></label>
+                            <div class="input-prefix-group">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="paymentAmount" name="amount" class="form-input" required min="1" step="0.01" placeholder="0.00">
+                            </div>
+                            <p class="form-help">Enter your monthly rent amount or partial payment.</p>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary btn-lg" id="continueToPayment" style="width: 100%;">
+                        Continue to Payment
+                    </button>
+                </div>
+
+                <!-- Step 2: Payment Details -->
+                <div class="payment-step hidden" id="paymentStep2">
+                    <div class="payment-summary">
+                        <div class="summary-row">
+                            <span>Property</span>
+                            <span id="summaryProperty">-</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Unit</span>
+                            <span id="summaryUnit">-</span>
+                        </div>
+                        <div class="summary-row summary-total">
+                            <span>Amount</span>
+                            <span id="summaryAmount">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">Payment Method</h3>
+
+                        <div class="payment-method-tabs">
+                            <button type="button" class="payment-tab active" data-method="card">
+                                💳 Card
+                            </button>
+                            <button type="button" class="payment-tab" data-method="bank">
+                                🏦 Bank (Free)
+                            </button>
+                        </div>
+
+                        <!-- Card Payment -->
+                        <div class="payment-method-content" id="cardPayment">
+                            <div class="form-group">
+                                <label class="form-label" for="cardName">Name on Card <span class="required">*</span></label>
+                                <input type="text" id="cardName" name="cardName" class="form-input" placeholder="John Smith">
+                            </div>
+
+                            <!-- Stripe Card Element will be mounted here -->
+                            <div class="form-group">
+                                <label class="form-label">Card Details <span class="required">*</span></label>
+                                <div class="stripe-element" id="cardElement">
+                                    <!-- Stripe Elements placeholder -->
+                                    <div class="stripe-placeholder">
+                                        <input type="text" class="form-input" placeholder="Card number" style="margin-bottom: var(--space-3);">
+                                        <div class="form-row">
+                                            <input type="text" class="form-input" placeholder="MM/YY">
+                                            <input type="text" class="form-input" placeholder="CVC">
+                                            <input type="text" class="form-input" placeholder="ZIP">
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="form-help">Your card information is encrypted and secure.</p>
+                            </div>
+
+                            <div class="fee-notice">
+                                <span class="fee-icon">ℹ️</span>
+                                <span>A 2.9% processing fee will be added to card payments.</span>
+                            </div>
+                        </div>
+
+                        <!-- Bank Payment (ACH) -->
+                        <div class="payment-method-content hidden" id="bankPayment">
+                            <div class="form-group">
+                                <label class="form-label" for="accountHolder">Account Holder Name <span class="required">*</span></label>
+                                <input type="text" id="accountHolder" name="accountHolder" class="form-input" placeholder="John Smith">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="routingNumber">Routing Number <span class="required">*</span></label>
+                                <input type="text" id="routingNumber" name="routingNumber" class="form-input" maxlength="9" placeholder="9 digits">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="accountNumber">Account Number <span class="required">*</span></label>
+                                <input type="text" id="accountNumber" name="accountNumber" class="form-input" placeholder="Account number">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="accountType">Account Type <span class="required">*</span></label>
+                                <select id="accountType" name="accountType" class="form-select">
+                                    <option value="checking">Checking</option>
+                                    <option value="savings">Savings</option>
+                                </select>
+                            </div>
+
+                            <div class="fee-notice fee-notice-success">
+                                <span class="fee-icon">✓</span>
+                                <span>No processing fee for bank transfers!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions" style="flex-direction: column; gap: var(--space-3);">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submitPayment" style="width: 100%;">
+                            Pay <span id="payButtonAmount">$0.00</span>
+                        </button>
+                        <button type="button" class="btn btn-ghost" id="backToStep1">
+                            Back
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Success State -->
+                <div class="payment-step hidden" id="paymentSuccess">
+                    <div class="success-message">
+                        <div class="success-icon">✅</div>
+                        <h2>Payment Successful!</h2>
+                        <p class="success-tracking">Confirmation: <strong id="paymentConfirmation">PMT-XXXX-XXXX</strong></p>
+                        <p>A receipt has been sent to your email address.</p>
+
+                        <div class="payment-receipt">
+                            <div class="receipt-row">
+                                <span>Amount Paid</span>
+                                <span id="receiptAmount">$0.00</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span>Date</span>
+                                <span id="receiptDate">-</span>
+                            </div>
+                            <div class="receipt-row">
+                                <span>Property</span>
+                                <span id="receiptProperty">-</span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary" id="closeSuccessModal" style="width: 100%;">
+                            Done
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Auto-Pay Setup Modal -->
+    <div class="modal-overlay" id="autoPayModal">
+        <div class="modal">
+            <button class="modal-close" id="closeAutoPayModal">&times;</button>
+
+            <div class="modal-header">
+                <h2>Set Up Auto-Pay</h2>
+                <p>Automatically pay rent on the 1st of each month.</p>
+            </div>
+
+            <form id="autoPayForm">
+                <div class="info-box" style="margin-bottom: var(--space-6);">
+                    <h4>🔄 How Auto-Pay Works</h4>
+                    <ul style="margin: var(--space-3) 0 0 var(--space-5); color: var(--text-secondary);">
+                        <li>Your payment method will be charged on the 1st</li>
+                        <li>You'll receive an email reminder 3 days before</li>
+                        <li>Cancel anytime with no penalty</li>
+                    </ul>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="autoPayProperty">Property Address <span class="required">*</span></label>
+                    <select id="autoPayProperty" name="property" class="form-select" required>
+                        <option value="">Select your property...</option>
+                        <option value="2749-euclid">2749 Euclid Heights Blvd</option>
+                        <option value="2757-euclid">2757 Euclid Heights Blvd</option>
+                        <option value="2761-euclid">2761 Euclid Heights Blvd</option>
+                        <option value="2541-overlook">2541-45 Overlook Road</option>
+                        <option value="2572-lancashire">2572 Lancashire Road</option>
+                        <option value="2808-mayfield">2808-2820 Mayfield Road</option>
+                        <option value="3730-warrensville">3730 Warrensville Center Rd</option>
+                        <option value="10820-carnegie">10820-10822 Carnegie Ave</option>
+                        <option value="12509-cedar">12509 Cedar Road</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label" for="autoPayUnit">Unit Number <span class="required">*</span></label>
+                        <input type="text" id="autoPayUnit" name="unit" class="form-input" required placeholder="e.g., Apt 4">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="autoPayAmount">Monthly Amount <span class="required">*</span></label>
+                        <div class="input-prefix-group">
+                            <span class="input-prefix">$</span>
+                            <input type="number" id="autoPayAmount" name="amount" class="form-input" required min="1" step="0.01">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="autoPayEmail">Email for Notifications <span class="required">*</span></label>
+                    <input type="email" id="autoPayEmail" name="email" class="form-input" required placeholder="you@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="autoPayPhone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="autoPayPhone" name="phone" class="form-input" required placeholder="(440) 555-1234">
+                </div>
+
+                <div class="alert alert-warning" style="margin-bottom: var(--space-6);">
+                    <span class="alert-icon">📞</span>
+                    <div class="alert-content">
+                        <div class="alert-title">Verification Required</div>
+                        <div class="alert-description">
+                            After submitting, our team will call you to verify your identity and complete the auto-pay setup.
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                    Request Auto-Pay Setup
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Alternative Payment Methods -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Other Payment Options</h2>
+                <p>Prefer to pay by check or in person?</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📬</div>
+                    <h3>Mail a Check</h3>
+                    <p>Make checks payable to "Rich Management Company"</p>
+                    <div class="address-block">
+                        <strong>Rich Management Company</strong><br>
+                        950 Main Avenue, Fourth Floor<br>
+                        Cleveland, OH 44113
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Drop Off Payment</h3>
+                    <p>Visit our office during business hours</p>
+                    <div class="address-block">
+                        <strong>Monday - Friday</strong><br>
+                        9:00 AM - 5:00 PM<br>
+                        <em>No cash accepted</em>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💵</div>
+                    <h3>Money Order</h3>
+                    <p>Make payable to "Rich Management Company"</p>
+                    <div class="address-block">
+                        Include your <strong>name</strong> and<br>
+                        <strong>unit number</strong> on the memo line
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section>
+        <div class="container">
+            <div class="form-container">
+                <h2 style="color: var(--secondary-700); margin-bottom: var(--space-6);">Payment FAQ</h2>
+
+                <div class="faq-item">
+                    <h4>When is rent due?</h4>
+                    <p>Rent is due on the 1st of each month. There is a grace period until the 5th, after which a $50 late fee applies.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>What forms of payment are accepted?</h4>
+                    <p>We accept credit cards, debit cards, ACH bank transfers, personal checks, money orders, and cashier's checks. We do not accept cash.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Is there a fee for online payments?</h4>
+                    <p>ACH (bank transfer) payments are free. Credit and debit card payments include a 2.9% processing fee.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>How long does ACH take to process?</h4>
+                    <p>ACH payments typically take 3-5 business days to process. Plan accordingly to ensure your payment arrives on time.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>How do I get a receipt?</h4>
+                    <p>Online payments generate automatic email receipts. For other payments, contact our office to request a receipt.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>What if I can't make my payment?</h4>
+                    <p>Please contact us immediately at (440) 600-7027. We're willing to work with residents who communicate proactively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact for Payment Issues -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Questions About Your Payment?</h2>
+            <p>Our team is here to help with billing questions or payment issues.</p>
+            <div class="cta-actions">
+                <a href="tel:4406007027" class="btn btn-white btn-lg">Call (440) 600-7027</a>
+                <a href="contact.html" class="btn btn-outline-white btn-lg">Send Message</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Rich <span>Management</span></h3>
+                    <p>Quality apartments in Cleveland Heights and Shaker Heights. Serving the Coventry, Overlook, and Cedar/Fairmount neighborhoods.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="Google">G</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="available-units.html">Available Units</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Residents</h4>
+                    <ul>
+                        <li><a href="payment.html">Pay Rent</a></li>
+                        <li><a href="maintenance.html">Maintenance</a></li>
+                        <li><a href="leasing.html">Leasing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>950 Main Avenue</li>
+                        <li>Fourth Floor</li>
+                        <li>Cleveland, OH 44113</li>
+                        <li><a href="tel:4406007027">(440) 600-7027</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rich Management Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/payment.js"></script>
+
+    <style>
+    /* Payment Options Grid */
+    .payment-options-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: var(--space-6);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Payment Card */
+    .payment-card {
+        background: var(--bg-primary);
+        border: 2px solid var(--border-light);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+        text-align: center;
+        position: relative;
+        transition: all var(--transition-base);
+    }
+
+    .payment-card:hover {
+        border-color: var(--primary-300);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .payment-card-featured {
+        border-color: var(--primary-500);
+        box-shadow: 0 0 0 3px var(--primary-100);
+    }
+
+    .payment-card-badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--primary-500);
+        color: white;
+        padding: var(--space-1) var(--space-4);
+        border-radius: var(--radius-full);
+        font-size: var(--text-xs);
+        font-weight: 600;
+    }
+
+    .payment-card-icon {
+        font-size: 48px;
+        margin-bottom: var(--space-4);
+    }
+
+    .payment-card h3 {
+        color: var(--secondary-700);
+        margin-bottom: var(--space-2);
+    }
+
+    .payment-card > p {
+        color: var(--text-secondary);
+        margin-bottom: var(--space-6);
+    }
+
+    .payment-card-note {
+        font-size: var(--text-xs);
+        color: var(--text-muted);
+        margin-top: var(--space-3);
+    }
+
+    /* Payment Features */
+    .payment-features {
+        text-align: left;
+        margin-bottom: var(--space-6);
+    }
+
+    .payment-feature {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        padding: var(--space-2) 0;
+        color: var(--text-secondary);
+        font-size: var(--text-sm);
+    }
+
+    .feature-check {
+        color: var(--success-500);
+        font-weight: bold;
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-base);
+        padding: var(--space-4);
+    }
+
+    .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal {
+        background: var(--bg-primary);
+        border-radius: var(--radius-2xl);
+        width: 100%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: var(--space-8);
+        position: relative;
+        transform: translateY(20px);
+        transition: transform var(--transition-base);
+    }
+
+    .modal-overlay.active .modal {
+        transform: translateY(0);
+    }
+
+    .modal-close {
+        position: absolute;
+        top: var(--space-4);
+        right: var(--space-4);
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--text-muted);
+        cursor: pointer;
+        padding: var(--space-2);
+        line-height: 1;
+    }
+
+    .modal-close:hover {
+        color: var(--text-primary);
+    }
+
+    .modal-header {
+        text-align: center;
+        margin-bottom: var(--space-6);
+    }
+
+    .modal-header h2 {
+        color: var(--secondary-700);
+        margin-bottom: var(--space-2);
+    }
+
+    .modal-header p {
+        color: var(--text-secondary);
+    }
+
+    /* Payment Summary */
+    .payment-summary {
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        margin-bottom: var(--space-6);
+    }
+
+    .summary-row {
+        display: flex;
+        justify-content: space-between;
+        padding: var(--space-2) 0;
+        color: var(--text-secondary);
+        font-size: var(--text-sm);
+    }
+
+    .summary-total {
+        border-top: 1px solid var(--border-light);
+        margin-top: var(--space-2);
+        padding-top: var(--space-3);
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: var(--text-base);
+    }
+
+    /* Payment Method Tabs */
+    .payment-method-tabs {
+        display: flex;
+        gap: var(--space-2);
+        margin-bottom: var(--space-6);
+    }
+
+    .payment-tab {
+        flex: 1;
+        padding: var(--space-3) var(--space-4);
+        background: var(--bg-secondary);
+        border: 2px solid transparent;
+        border-radius: var(--radius-lg);
+        cursor: pointer;
+        font-weight: 500;
+        transition: all var(--transition-fast);
+    }
+
+    .payment-tab:hover {
+        background: var(--primary-50);
+    }
+
+    .payment-tab.active {
+        background: var(--primary-50);
+        border-color: var(--primary-500);
+        color: var(--primary-600);
+    }
+
+    /* Stripe Element */
+    .stripe-element {
+        border: 1px solid var(--border-medium);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        background: var(--bg-primary);
+    }
+
+    .stripe-placeholder .form-input {
+        margin-bottom: 0;
+    }
+
+    /* Fee Notice */
+    .fee-notice {
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        padding: var(--space-3) var(--space-4);
+        background: var(--warning-50);
+        border-radius: var(--radius-lg);
+        font-size: var(--text-sm);
+        color: var(--warning-700);
+        margin-top: var(--space-4);
+    }
+
+    .fee-notice-success {
+        background: var(--success-50);
+        color: var(--success-700);
+    }
+
+    /* Payment Receipt */
+    .payment-receipt {
+        background: var(--bg-secondary);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        margin: var(--space-6) 0;
+    }
+
+    .receipt-row {
+        display: flex;
+        justify-content: space-between;
+        padding: var(--space-2) 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .receipt-row:last-child {
+        border-bottom: none;
+    }
+
+    /* FAQ Items */
+    .faq-item {
+        padding: var(--space-5) 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .faq-item:last-child {
+        border-bottom: none;
+    }
+
+    .faq-item h4 {
+        color: var(--secondary-700);
+        margin-bottom: var(--space-2);
+    }
+
+    .faq-item p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+
+    /* Address Block */
+    .address-block {
+        background: var(--bg-secondary);
+        padding: var(--space-4);
+        border-radius: var(--radius-lg);
+        margin-top: var(--space-4);
+        font-size: var(--text-sm);
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+
+    /* Input Prefix Group */
+    .input-prefix-group {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    .input-prefix {
+        position: absolute;
+        left: var(--space-4);
+        color: var(--text-muted);
+        font-weight: 500;
+        pointer-events: none;
+    }
+
+    .input-prefix-group .form-input {
+        padding-left: var(--space-8);
+    }
+
+    /* Hidden utility */
+    .hidden {
+        display: none !important;
+    }
+    </style>
+</body>
+</html>

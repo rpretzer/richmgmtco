@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse available apartments for rent at Rich Management Company. Studios, 1, 2, and 3 bedroom units in Cleveland Heights and Shaker Heights.">
+    <title>Available Units | Rich Management Company</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Rich <span>Management</span></span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="properties.html" class="nav-link">Properties</a>
+                    <a href="available-units.html" class="nav-link active">Available Units</a>
+                    <a href="leasing.html" class="nav-link">Leasing</a>
+                    <a href="maintenance.html" class="nav-link">Maintenance</a>
+                    <a href="payment.html" class="nav-link">Pay Rent</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-mobile-link">Home</a>
+                <a href="properties.html" class="nav-mobile-link">Properties</a>
+                <a href="available-units.html" class="nav-mobile-link active">Available Units</a>
+                <a href="leasing.html" class="nav-mobile-link">Leasing</a>
+                <a href="maintenance.html" class="nav-mobile-link">Maintenance</a>
+                <a href="payment.html" class="nav-mobile-link">Pay Rent</a>
+                <a href="contact.html" class="nav-mobile-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Available Units</h1>
+            <p>Find your perfect apartment in Cleveland Heights or Shaker Heights.</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section style="padding: 2rem 0;">
+        <div class="container">
+            <div class="filter-section">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label for="bedrooms">Bedrooms</label>
+                        <select id="bedrooms">
+                            <option value="">All</option>
+                            <option value="studio">Studio</option>
+                            <option value="1">1 Bedroom</option>
+                            <option value="2">2 Bedrooms</option>
+                            <option value="3">3 Bedrooms</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="price">Max Price</label>
+                        <select id="price">
+                            <option value="">Any</option>
+                            <option value="800">Under $800</option>
+                            <option value="1000">Under $1,000</option>
+                            <option value="1200">Under $1,200</option>
+                            <option value="1500">Under $1,500</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="location">Location</label>
+                        <select id="location">
+                            <option value="">All Locations</option>
+                            <option value="coventry">Coventry</option>
+                            <option value="overlook">Overlook</option>
+                            <option value="cedar">Cedar/Fairmount</option>
+                            <option value="shaker">Shaker Heights</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <button class="btn btn-primary" style="width: 100%;">Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>&#128161; Special Rates Available</h4>
+                <p>We offer special rental rates for hospital employees and college/university students. <a href="contact.html" style="color: var(--primary-color);">Contact us</a> to learn more!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Units Section -->
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="unit-grid">
+                <!-- Unit 1 -->
+                <div class="unit-card available">
+                    <div class="unit-header">
+                        <span class="unit-type">1 Bedroom</span>
+                        <span class="unit-status available">Available Now</span>
+                    </div>
+                    <div class="unit-body">
+                        <div class="unit-price">$950 <span>/month</span></div>
+                        <p style="color: var(--text-light); margin-bottom: 0.5rem;">2749 Euclid Heights Blvd, Unit 4</p>
+                        <div class="unit-details">
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1</div>
+                                <div class="unit-detail-label">Bedroom</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1</div>
+                                <div class="unit-detail-label">Bathroom</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">650</div>
+                                <div class="unit-detail-label">Sq. Ft.</div>
+                            </div>
+                        </div>
+                        <div class="unit-amenities">
+                            <span class="unit-amenity">Hardwood Floors</span>
+                            <span class="unit-amenity">Updated Kitchen</span>
+                            <span class="unit-amenity">Laundry</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="leasing.html" class="btn btn-primary">Apply Now</a>
+                            <a href="contact.html" class="btn btn-outline">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 2 -->
+                <div class="unit-card available">
+                    <div class="unit-header">
+                        <span class="unit-type">Studio</span>
+                        <span class="unit-status available">Available Now</span>
+                    </div>
+                    <div class="unit-body">
+                        <div class="unit-price">$725 <span>/month</span></div>
+                        <p style="color: var(--text-light); margin-bottom: 0.5rem;">2757 Euclid Heights Blvd, Unit 2</p>
+                        <div class="unit-details">
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">Studio</div>
+                                <div class="unit-detail-label">Type</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1</div>
+                                <div class="unit-detail-label">Bathroom</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">450</div>
+                                <div class="unit-detail-label">Sq. Ft.</div>
+                            </div>
+                        </div>
+                        <div class="unit-amenities">
+                            <span class="unit-amenity">Utilities Included</span>
+                            <span class="unit-amenity">Laundry</span>
+                            <span class="unit-amenity">Parking</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="leasing.html" class="btn btn-primary">Apply Now</a>
+                            <a href="contact.html" class="btn btn-outline">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 3 -->
+                <div class="unit-card available">
+                    <div class="unit-header">
+                        <span class="unit-type">2 Bedroom</span>
+                        <span class="unit-status available">Available Now</span>
+                    </div>
+                    <div class="unit-body">
+                        <div class="unit-price">$1,150 <span>/month</span></div>
+                        <p style="color: var(--text-light); margin-bottom: 0.5rem;">2541 Overlook Road, Unit 6</p>
+                        <div class="unit-details">
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">2</div>
+                                <div class="unit-detail-label">Bedrooms</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1</div>
+                                <div class="unit-detail-label">Bathroom</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">850</div>
+                                <div class="unit-detail-label">Sq. Ft.</div>
+                            </div>
+                        </div>
+                        <div class="unit-amenities">
+                            <span class="unit-amenity">Garage Parking</span>
+                            <span class="unit-amenity">Storage</span>
+                            <span class="unit-amenity">Laundry</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="leasing.html" class="btn btn-primary">Apply Now</a>
+                            <a href="contact.html" class="btn btn-outline">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 4 -->
+                <div class="unit-card available">
+                    <div class="unit-header">
+                        <span class="unit-type">1 Bedroom</span>
+                        <span class="unit-status available">Available Now</span>
+                    </div>
+                    <div class="unit-body">
+                        <div class="unit-price">$875 <span>/month</span></div>
+                        <p style="color: var(--text-light); margin-bottom: 0.5rem;">2808 Mayfield Road, Unit 3</p>
+                        <div class="unit-details">
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1</div>
+                                <div class="unit-detail-label">Bedroom</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1</div>
+                                <div class="unit-detail-label">Bathroom</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">600</div>
+                                <div class="unit-detail-label">Sq. Ft.</div>
+                            </div>
+                        </div>
+                        <div class="unit-amenities">
+                            <span class="unit-amenity">Heat Included</span>
+                            <span class="unit-amenity">Laundry</span>
+                            <span class="unit-amenity">Near Transit</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="leasing.html" class="btn btn-primary">Apply Now</a>
+                            <a href="contact.html" class="btn btn-outline">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 5 -->
+                <div class="unit-card available">
+                    <div class="unit-header">
+                        <span class="unit-type">3 Bedroom</span>
+                        <span class="unit-status available">Available Now</span>
+                    </div>
+                    <div class="unit-body">
+                        <div class="unit-price">$1,450 <span>/month</span></div>
+                        <p style="color: var(--text-light); margin-bottom: 0.5rem;">12509 Cedar Road, Unit 1</p>
+                        <div class="unit-details">
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">3</div>
+                                <div class="unit-detail-label">Bedrooms</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1.5</div>
+                                <div class="unit-detail-label">Bathrooms</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1,200</div>
+                                <div class="unit-detail-label">Sq. Ft.</div>
+                            </div>
+                        </div>
+                        <div class="unit-amenities">
+                            <span class="unit-amenity">Spacious Layout</span>
+                            <span class="unit-amenity">Parking</span>
+                            <span class="unit-amenity">Laundry</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="leasing.html" class="btn btn-primary">Apply Now</a>
+                            <a href="contact.html" class="btn btn-outline">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unit 6 -->
+                <div class="unit-card available">
+                    <div class="unit-header">
+                        <span class="unit-type">2 Bedroom</span>
+                        <span class="unit-status pending">Available 2/1</span>
+                    </div>
+                    <div class="unit-body">
+                        <div class="unit-price">$1,100 <span>/month</span></div>
+                        <p style="color: var(--text-light); margin-bottom: 0.5rem;">2761 Euclid Heights Blvd, Unit 5</p>
+                        <div class="unit-details">
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">2</div>
+                                <div class="unit-detail-label">Bedrooms</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">1</div>
+                                <div class="unit-detail-label">Bathroom</div>
+                            </div>
+                            <div class="unit-detail">
+                                <div class="unit-detail-value">800</div>
+                                <div class="unit-detail-label">Sq. Ft.</div>
+                            </div>
+                        </div>
+                        <div class="unit-amenities">
+                            <span class="unit-amenity">Coventry Location</span>
+                            <span class="unit-amenity">Updated</span>
+                            <span class="unit-amenity">Laundry</span>
+                        </div>
+                        <div class="property-actions">
+                            <a href="leasing.html" class="btn btn-primary">Apply Now</a>
+                            <a href="contact.html" class="btn btn-outline">Schedule Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Info -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>Ready to Apply?</h2>
+                    <p>Our application process is simple and straightforward. Here's what you'll need:</p>
+                    <ul style="color: var(--text-light); margin-top: 1rem;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--primary-color);">&#10003;</span> Valid photo ID</li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--primary-color);">&#10003;</span> Proof of income (pay stubs, offer letter, etc.)</li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--primary-color);">&#10003;</span> Rental history/references</li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0; color: var(--primary-color);">&#10003;</span> Application fee</li>
+                    </ul>
+                    <a href="leasing.html" class="btn btn-primary mt-2">Start Application</a>
+                </div>
+                <div class="about-image">&#128221;</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Questions About a Unit?</h2>
+            <p>Contact us to learn more or schedule a showing.</p>
+            <div class="cta-actions">
+                <a href="contact.html" class="btn btn-white btn-lg">Contact Us</a>
+                <a href="tel:4406007027" class="btn btn-outline-white btn-lg">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Rich <span>Management</span></h3>
+                    <p>Quality apartments in Cleveland Heights and Shaker Heights. Serving the Coventry, Overlook, and Cedar/Fairmount neighborhoods.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="Google">G</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="available-units.html">Available Units</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Residents</h4>
+                    <ul>
+                        <li><a href="payment.html">Pay Rent</a></li>
+                        <li><a href="maintenance.html">Maintenance</a></li>
+                        <li><a href="leasing.html">Leasing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>950 Main Avenue</li>
+                        <li>Fourth Floor</li>
+                        <li>Cleveland, OH 44113</li>
+                        <li><a href="tel:4406007027">(440) 600-7027</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rich Management Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

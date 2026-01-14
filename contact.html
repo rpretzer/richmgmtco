@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Rich Management Company for apartment rentals in Cleveland Heights and Shaker Heights. Call (440) 600-7027 or email us.">
+    <title>Contact Us | Rich Management Company</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">Rich <span>Management</span></span>
+                </a>
+                <nav class="nav-desktop">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="properties.html" class="nav-link">Properties</a>
+                    <a href="available-units.html" class="nav-link">Available Units</a>
+                    <a href="leasing.html" class="nav-link">Leasing</a>
+                    <a href="maintenance.html" class="nav-link">Maintenance</a>
+                    <a href="payment.html" class="nav-link">Pay Rent</a>
+                    <a href="contact.html" class="nav-link active">Contact</a>
+                </nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav class="nav-mobile" id="mobileMenu">
+                <a href="index.html" class="nav-mobile-link">Home</a>
+                <a href="properties.html" class="nav-mobile-link">Properties</a>
+                <a href="available-units.html" class="nav-mobile-link">Available Units</a>
+                <a href="leasing.html" class="nav-mobile-link">Leasing</a>
+                <a href="maintenance.html" class="nav-mobile-link">Maintenance</a>
+                <a href="payment.html" class="nav-mobile-link">Pay Rent</a>
+                <a href="contact.html" class="nav-mobile-link active">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Get in touch with our team.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section style="padding: var(--space-12) 0;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p class="contact-intro">Have questions about our apartments or interested in scheduling a showing? We're here to help!</p>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Office Location</h4>
+                            <p>950 Main Avenue, Fourth Floor<br>Cleveland, OH 44113</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="tel:4406007027" class="contact-link">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>(440) 600-7027</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="mailto:richmanagementcompany@gmail.com" class="contact-link">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>richmanagementcompany@gmail.com</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday: By Appointment<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item contact-item-highlight">
+                        <div class="contact-icon">🚨</div>
+                        <div>
+                            <h4>Emergency Maintenance</h4>
+                            <p>24/7 Emergency Line: <a href="tel:4406007027">(440) 600-7027</a><br><em>For current tenants only</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label" for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" class="form-input" required placeholder="John Smith">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-input" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" placeholder="(440) 555-1234">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="inquiry">Type of Inquiry <span class="required">*</span></label>
+                            <select id="inquiry" name="inquiry" class="form-select" required>
+                                <option value="">Select an option...</option>
+                                <option value="available">Looking for an Apartment</option>
+                                <option value="showing">Schedule a Showing</option>
+                                <option value="current">Current Tenant Question</option>
+                                <option value="application">Application Status</option>
+                                <option value="special-rates">Special Rates Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" class="form-textarea" required placeholder="How can we help you?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Quick Links</h2>
+                <p>Find what you need quickly.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Available Units</h3>
+                    <p>Browse our current apartment listings and find your new home.</p>
+                    <a href="available-units.html" class="btn btn-outline" style="margin-top: var(--space-4);">View Units</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Apply Online</h3>
+                    <p>Ready to apply? Start your leasing application today.</p>
+                    <a href="leasing.html" class="btn btn-outline" style="margin-top: var(--space-4);">Apply Now</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Maintenance</h3>
+                    <p>Current tenant? Submit a maintenance request online.</p>
+                    <a href="maintenance.html" class="btn btn-outline" style="margin-top: var(--space-4);">Submit Request</a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Pay Rent</h3>
+                    <p>Access our online payment portal to pay your rent.</p>
+                    <a href="payment.html" class="btn btn-outline" style="margin-top: var(--space-4);">Pay Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighborhoods -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Neighborhoods</h2>
+                <p>We manage properties throughout these desirable areas.</p>
+            </div>
+            <div class="neighborhood-grid">
+                <div class="neighborhood-card">
+                    <div class="neighborhood-icon">🎭</div>
+                    <h3>Coventry Village</h3>
+                    <p>Cleveland Heights' vibrant arts and entertainment district with eclectic shops, restaurants, and nightlife.</p>
+                </div>
+                <div class="neighborhood-card">
+                    <div class="neighborhood-icon">🌳</div>
+                    <h3>Overlook</h3>
+                    <p>Peaceful, tree-lined streets near downtown Cleveland with easy access to University Circle.</p>
+                </div>
+                <div class="neighborhood-card">
+                    <div class="neighborhood-icon">🏛️</div>
+                    <h3>Cedar/Fairmount</h3>
+                    <p>Historic neighborhood near University Circle with beautiful architecture and cultural institutions.</p>
+                </div>
+                <div class="neighborhood-card">
+                    <div class="neighborhood-icon">🎓</div>
+                    <h3>Shaker Heights</h3>
+                    <p>Prestigious community with excellent schools, beautiful parks, and convenient rapid transit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Find Your New Home?</h2>
+            <p>Browse our available apartments or call us to schedule a tour.</p>
+            <div class="cta-actions">
+                <a href="available-units.html" class="btn btn-white btn-lg">View Available Units</a>
+                <a href="tel:4406007027" class="btn btn-outline-white btn-lg">Call Us Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Rich <span>Management</span></h3>
+                    <p>Quality apartments in Cleveland Heights and Shaker Heights. Serving the Coventry, Overlook, and Cedar/Fairmount neighborhoods.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Twitter">X</a>
+                        <a href="#" class="social-link" aria-label="Google">G</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="available-units.html">Available Units</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Residents</h4>
+                    <ul>
+                        <li><a href="payment.html">Pay Rent</a></li>
+                        <li><a href="maintenance.html">Maintenance</a></li>
+                        <li><a href="leasing.html">Leasing</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>950 Main Avenue</li>
+                        <li>Fourth Floor</li>
+                        <li>Cleveland, OH 44113</li>
+                        <li><a href="tel:4406007027">(440) 600-7027</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Rich Management Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+
+    <style>
+    /* Contact Grid */
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-12);
+        align-items: start;
+    }
+
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+        }
+    }
+
+    /* Contact Info */
+    .contact-info h3 {
+        color: var(--secondary-700);
+        margin-bottom: var(--space-2);
+    }
+
+    .contact-intro {
+        color: var(--text-secondary);
+        margin-bottom: var(--space-8);
+    }
+
+    .contact-item {
+        display: flex;
+        gap: var(--space-4);
+        padding: var(--space-4) 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .contact-item:last-child {
+        border-bottom: none;
+    }
+
+    .contact-item-highlight {
+        background: var(--warning-50);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        margin-top: var(--space-4);
+        border: none;
+    }
+
+    .contact-link {
+        display: flex;
+        gap: var(--space-4);
+        text-decoration: none;
+        color: inherit;
+        transition: color var(--transition-fast);
+    }
+
+    .contact-link:hover {
+        color: var(--primary-600);
+    }
+
+    .contact-icon {
+        font-size: 24px;
+        flex-shrink: 0;
+    }
+
+    .contact-item h4 {
+        color: var(--secondary-700);
+        margin-bottom: var(--space-1);
+        font-size: var(--text-sm);
+    }
+
+    .contact-item p {
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+
+    .contact-item a {
+        color: var(--primary-600);
+    }
+
+    /* Contact Form */
+    .contact-form {
+        background: var(--bg-secondary);
+        border-radius: var(--radius-2xl);
+        padding: var(--space-8);
+    }
+
+    .contact-form h3 {
+        color: var(--secondary-700);
+        margin-bottom: var(--space-6);
+    }
+
+    /* Neighborhood Grid */
+    .neighborhood-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-6);
+    }
+
+    .neighborhood-card {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-light);
+        border-radius: var(--radius-xl);
+        padding: var(--space-6);
+        text-align: center;
+        transition: all var(--transition-base);
+    }
+
+    .neighborhood-card:hover {
+        border-color: var(--primary-300);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+    }
+
+    .neighborhood-icon {
+        font-size: 32px;
+        margin-bottom: var(--space-3);
+    }
+
+    .neighborhood-card h3 {
+        color: var(--secondary-700);
+        margin-bottom: var(--space-2);
+    }
+
+    .neighborhood-card p {
+        color: var(--text-secondary);
+        font-size: var(--text-sm);
+        line-height: 1.6;
+    }
+    </style>
+</body>
+</html>
