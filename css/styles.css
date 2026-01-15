@@ -8,19 +8,29 @@
 
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
-    /* Primary Colors - Refined Orange */
-    --primary-50: #fff7ed;
-    --primary-100: #ffedd5;
-    --primary-200: #fed7aa;
-    --primary-300: #fdba74;
-    --primary-400: #fb923c;
-    --primary-500: #f97316;
-    --primary-600: #ea580c;
-    --primary-700: #c2410c;
-    --primary-800: #9a3412;
-    --primary-900: #7c2d12;
+    /* Primary Colors - Professional Blue */
+    --primary-50: #f0f7fa;
+    --primary-100: #d9eef5;
+    --primary-200: #b3ddeb;
+    --primary-300: #7fc4db;
+    --primary-400: #4aa6c4;
+    --primary-500: #2d8aaa;
+    --primary-600: #1f6f8f;
+    --primary-700: #1a5a75;
+    --primary-800: #184a60;
+    --primary-900: #163d50;
 
-    /* Secondary Colors - Slate */
+    /* Accent Colors - Golden Yellow */
+    --accent-50: #fffbeb;
+    --accent-100: #fef3c7;
+    --accent-200: #fde68a;
+    --accent-300: #fcd34d;
+    --accent-400: #fbbf24;
+    --accent-500: #f59e0b;
+    --accent-600: #d97706;
+    --accent-700: #b45309;
+
+    /* Secondary Colors - Slate Gray */
     --secondary-50: #f8fafc;
     --secondary-100: #f1f5f9;
     --secondary-200: #e2e8f0;
@@ -32,7 +42,7 @@
     --secondary-800: #1e293b;
     --secondary-900: #0f172a;
 
-    /* Accent Colors */
+    /* Status Colors */
     --success-50: #f0fdf4;
     --success-500: #22c55e;
     --success-600: #16a34a;
@@ -256,7 +266,7 @@ section {
 }
 
 .logo-text span {
-    color: var(--primary-600);
+    color: var(--primary-500);
 }
 
 .nav-desktop {
@@ -413,13 +423,26 @@ section {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
     color: white;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0.1), 0 1px 3px rgb(234 88 12 / 0.2);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.1), 0 1px 3px rgb(31 111 143 / 0.2);
 }
 
 .btn-primary:hover {
     background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
     transform: translateY(-1px);
-    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1), 0 2px 8px rgb(234 88 12 / 0.3);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1), 0 2px 8px rgb(31 111 143 / 0.3);
+}
+
+/* Accent Button - Yellow */
+.btn-accent {
+    background: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-500) 100%);
+    color: var(--secondary-900);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.1), 0 1px 3px rgb(251 191 36 / 0.3);
+}
+
+.btn-accent:hover {
+    background: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-600) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.1), 0 2px 8px rgb(251 191 36 / 0.4);
 }
 
 .btn-primary:active {
@@ -465,13 +488,30 @@ section {
 /* White Button (for dark backgrounds) */
 .btn-white {
     background: white;
-    color: var(--primary-600);
+    color: var(--primary-700);
 }
 
 .btn-white:hover {
-    background: var(--primary-50);
+    background: var(--accent-100);
     transform: translateY(-1px);
     box-shadow: var(--shadow-lg);
+}
+
+/* Outline White Button (for dark backgrounds) */
+.btn-outline-white {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: calc(var(--space-3) - 2px) calc(var(--space-5) - 2px);
+}
+
+.btn-outline-white:hover {
+    background: white;
+    color: var(--primary-700);
+}
+
+.btn-outline-white.btn-lg {
+    padding: calc(var(--space-4) - 2px) calc(var(--space-6) - 2px);
 }
 
 /* ===== HERO SECTION ===== */
@@ -479,7 +519,7 @@ section {
     position: relative;
     padding: var(--space-24) 0 var(--space-16);
     margin-top: 72px;
-    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--secondary-800) 100%);
+    background: linear-gradient(135deg, var(--primary-700) 0%, var(--primary-800) 50%, var(--primary-900) 100%);
     overflow: hidden;
 }
 
@@ -487,7 +527,7 @@ section {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .hero-content {
@@ -522,9 +562,10 @@ section {
 
 .hero-description {
     font-size: var(--text-lg);
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     margin-bottom: var(--space-8);
     max-width: 600px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-actions {
@@ -555,7 +596,7 @@ section {
 
 .hero-stat-label {
     font-size: var(--text-sm);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.9);
     margin-top: var(--space-1);
 }
 
@@ -668,11 +709,11 @@ section {
     justify-content: center;
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+    background: linear-gradient(135deg, var(--accent-400) 0%, var(--accent-500) 100%);
     border-radius: var(--radius-xl);
     font-size: 28px;
     margin-bottom: var(--space-5);
-    box-shadow: 0 4px 12px rgb(234 88 12 / 0.3);
+    box-shadow: 0 4px 12px rgb(251 191 36 / 0.4);
 }
 
 .feature-card h3 {
@@ -1231,8 +1272,8 @@ section {
 
 /* ===== INFO BOX ===== */
 .info-box {
-    background: var(--bg-secondary);
-    border-left: 4px solid var(--primary-500);
+    background: var(--accent-50);
+    border-left: 4px solid var(--accent-500);
     border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
     padding: var(--space-5);
     margin-bottom: var(--space-6);
@@ -1265,7 +1306,7 @@ section {
 
 .about-image {
     height: 400px;
-    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
     border-radius: var(--radius-2xl);
     display: flex;
     align-items: center;
@@ -1369,7 +1410,7 @@ section {
 
 /* ===== CTA SECTION ===== */
 .cta-section {
-    background: linear-gradient(135deg, var(--primary-600) 0%, var(--secondary-800) 100%);
+    background: linear-gradient(135deg, var(--primary-700) 0%, var(--primary-900) 100%);
     text-align: center;
     color: white;
 }
@@ -1380,7 +1421,7 @@ section {
 }
 
 .cta-section p {
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     font-size: var(--text-lg);
     margin-bottom: var(--space-8);
     max-width: 600px;
@@ -1399,7 +1440,7 @@ section {
 .page-header {
     padding: var(--space-24) 0 var(--space-12);
     margin-top: 72px;
-    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 50%, var(--secondary-800) 100%);
+    background: linear-gradient(135deg, var(--primary-700) 0%, var(--primary-800) 50%, var(--primary-900) 100%);
     text-align: center;
     color: white;
 }
@@ -1410,7 +1451,7 @@ section {
 }
 
 .page-header p {
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
     font-size: var(--text-lg);
     max-width: 600px;
     margin: 0 auto;
@@ -1454,7 +1495,7 @@ section {
     border-radius: var(--radius-2xl);
     font-size: 36px;
     margin-bottom: var(--space-5);
-    box-shadow: 0 8px 20px rgb(234 88 12 / 0.3);
+    box-shadow: 0 8px 20px rgb(31 111 143 / 0.3);
 }
 
 .portal-card h3 {
@@ -1570,7 +1611,7 @@ section {
 }
 
 .footer-brand h3 span {
-    color: var(--primary-400);
+    color: var(--accent-400);
 }
 
 .footer-brand p {
@@ -1596,7 +1637,7 @@ section {
 }
 
 .social-link:hover {
-    background: var(--primary-500);
+    background: var(--accent-500);
 }
 
 .footer-links h4 {
@@ -1617,7 +1658,7 @@ section {
 }
 
 .footer-links a:hover {
-    color: var(--primary-400);
+    color: var(--accent-400);
 }
 
 .footer-bottom {
