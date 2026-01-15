@@ -415,7 +415,7 @@
                 <p>Prefer to pay by check or in person?</p>
             </div>
 
-            <div class="features-grid" style="max-width: 900px; margin: 0 auto; grid-template-columns: repeat(3, 1fr);">
+            <div class="features-grid other-payment-options" style="max-width: 900px; margin: 0 auto;">
                 <div class="feature-card">
                     <div class="feature-icon">📬</div>
                     <h3>Mail a Check</h3>
@@ -858,6 +858,17 @@
     /* Hidden utility */
     .hidden {
         display: none !important;
+    }
+
+    /* Other Payment Options Grid - 3 columns on desktop, stack on mobile */
+    .other-payment-options {
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        .other-payment-options {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
     </style>
 </body>
