@@ -1,30 +1,36 @@
 // Rich Management Company - Main JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Update copyright year to current year
+    const currentYear = new Date().getFullYear();
+    const footerBottom = document.querySelector('.footer-bottom p');
+    if (footerBottom) {
+        footerBottom.innerHTML = footerBottom.innerHTML.replace(/\d{4}/, currentYear);
+    }
+
     // Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
+    const mobileMenu = document.querySelector('.nav-mobile');
 
-    if (mobileMenuBtn && navLinks) {
+    if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-
-            // Animate hamburger to X
-            const spans = mobileMenuBtn.querySelectorAll('span');
-            spans.forEach(span => span.classList.toggle('active'));
+            mobileMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
         });
 
         // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
+        mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
             });
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
-            if (!navLinks.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-                navLinks.classList.remove('active');
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
             }
         });
     }
