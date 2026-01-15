@@ -1608,6 +1608,7 @@ section {
     font-family: var(--font-display);
     font-size: var(--text-xl);
     margin-bottom: var(--space-4);
+    color: white;
 }
 
 .footer-brand h3 span {
