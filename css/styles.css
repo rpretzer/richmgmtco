@@ -1654,6 +1654,8 @@ section {
 .footer-links h4 {
     font-size: var(--text-base);
     margin-bottom: var(--space-5);
+    color: white;
+    font-weight: 600;
 }
 
 .footer-links ul {
